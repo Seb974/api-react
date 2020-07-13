@@ -3,11 +3,12 @@
 {% block title %}Mon application React{% endblock %}
 
 {% block stylesheets %}
+    <link href="https://bootswatch.com/4/materia/bootstrap.min.css" rel="stylesheet"/>
     {{ encore_entry_link_tags('app') }}
 {% endblock %}
 
 {% block body %}
-    <h1>Page d'accueil</h1>
+    <div id="root"></div>
 {% endblock %}
 
 {% block javascripts %}
