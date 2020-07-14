@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      },
  *      denormalizationContext={
  *          "disable_type_enforcement"=true
- *      }
+ *      },
  * )
  * @ORM\Entity(repositoryClass=BookingRepository::class)
  */

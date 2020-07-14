@@ -3,6 +3,7 @@ import axios from 'axios';
 import MessagesActions from '../actions/MessagesActions';
 import AuthActions from '../actions/AuthActions';
 import AuthContext from '../contexts/AuthContext';
+import Field from '../components/Forms/Field';
 
 const initialCredentials = {username: '', password: ''};
 
@@ -36,31 +37,24 @@ const LoginPage = ({history}) => {
         <>
             <h1>Connexion à l'application</h1>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="username">Adresse email</label>
-                    <input 
-                        className={"form-control" + (error && " is-invalid")}
-                        id="username" 
-                        name="username" 
-                        type="email" 
-                        placeholder="Adresse email de connexion"
-                        value={credentials.username}
-                        onChange={handleChange}
-                    />
-                    {error && <p className="invalid-feedback">{error}</p>}
-                </div>
-                <div className="form-group">
-                    <label htmlFor="_password">Mot de passe</label>
-                    <input 
-                        className="form-control" 
-                        id="password" 
-                        name="password" 
-                        type="password" 
-                        placeholder="Mot de passe"
-                        value={credentials.password}
-                        onChange={handleChange}
-                    />
-                </div>
+                <Field 
+                    name="username"
+                    label="Adresse email"
+                    placeholder="Adresse email de connexion"
+                    type="email"
+                    error={error}
+                    value={credentials.username}
+                    onChange={handleChange}
+                />
+                <Field 
+                    name="password"
+                    label="Mot de passe"
+                    placeholder="Mot de passe"
+                    type="password"
+                    error={error}
+                    value={credentials.password}
+                    onChange={handleChange}
+                />
                 <div className="form-group">
                     <button type="submit" className="btn btn-success">Valider</button>
                 </div>

@@ -3,6 +3,7 @@ import Pagination from '../components/Pagination';
 import MessagesActions from '../actions/MessagesActions';
 import moment from "moment";
 import SearchBar from '../components/SearchBar';
+import { Link } from 'react-router-dom';
 
 const MessagesPage = (props) => {
     
@@ -51,7 +52,10 @@ const MessagesPage = (props) => {
 
     return (
         <>
-            <h2>Liste des messages</h2>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+                <h2>Liste des messages</h2>
+                <Link to="/messages/new" className="btn btn-light">Créer un message</Link>
+            </div>
 
             <SearchBar value={search} onSearch={handleSearch} />
 
@@ -81,7 +85,7 @@ const MessagesPage = (props) => {
                                 </td>
                                 
                                 <td>
-                                    <button className="btn btn-sm btn-info mr-2">Voir</button>
+                                    <Link to={"/messages/" + message.id} className="btn btn-sm btn-info mr-2">Voir</Link>
                                     <button className="btn btn-sm btn-danger" onClick={() => handleDelete(message.id)}>Supprimer</button>
                                 </td>
                             </tr>

@@ -7,7 +7,8 @@ import { HashRouter, Switch, Route, withRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import AuthActions from "./actions/AuthActions";
 import AuthContext from "./contexts/AuthContext";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/Routes/PrivateRoute";
+import MessagePage from "./pages/MessagePage";
 
 require("../css/app.css");
 
@@ -24,7 +25,8 @@ const App = () => {
                 <NavbarWithRouter />
                 <main className="container pt-5">
                     <Switch>
-                        <Route path="/" exact component={HomePage} />                   {/* Peut être privée et non accessible sans connexion, grâce à PrivateRoute */}
+                        <Route path="/" exact component={HomePage} />
+                        <PrivateRoute path="/messages/:id" component={MessagePage} />
                         <PrivateRoute path="/messages" component={MessagesPage} />
                         <Route path="/login" component={LoginPage} />
                     </Switch>
