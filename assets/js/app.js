@@ -9,6 +9,8 @@ import AuthActions from "./actions/AuthActions";
 import AuthContext from "./contexts/AuthContext";
 import PrivateRoute from "./components/Routes/PrivateRoute";
 import MessagePage from "./pages/MessagePage";
+import BookingsPage from "./pages/BookingsPage";
+import BookingPage from "./pages/BookingPage";
 
 require("../css/app.css");
 
@@ -28,6 +30,8 @@ const App = () => {
                         <Route path="/" exact component={HomePage} />
                         <PrivateRoute path="/messages/:id" component={MessagePage} />
                         <PrivateRoute path="/messages" component={MessagesPage} />
+                        <PrivateRoute path="/bookings/:id" component={BookingPage} />
+                        <PrivateRoute path="/bookings" component={BookingsPage} />
                         <Route path="/login" component={LoginPage} />
                     </Switch>
                 </main>

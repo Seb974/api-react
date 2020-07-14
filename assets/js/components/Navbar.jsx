@@ -31,16 +31,10 @@ const Navbar = ({history}) => {
             <div className="collapse navbar-collapse" id="navbarColor03">
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <NavLink className="nav-link" to="/messages">Messages <span className="sr-only">(current)</span></NavLink>
+                    <NavLink className="nav-link" to="/messages">Messages </NavLink>       {/* <span className="sr-only">(current)</span> */}
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="#">Features</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="#">Pricing</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="#">About</NavLink>
+                    <NavLink className="nav-link" to="/bookings">Réservations</NavLink>
                 </li>
                 </ul>
                 <ul className="navbar-nav ml-auto">

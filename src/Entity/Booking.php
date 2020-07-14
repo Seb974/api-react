@@ -40,16 +40,18 @@ class Booking
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"bookings_read"})
-     * @Assert\NotBlank(message="La date d'arrivée est obligatoire")
-     * @Assert\Type(type = "\DateTime", message="La date doit être au format YYYY-MM-DD ou YYYY-MM-DD HH:MM:SS")
+     * @Assert\NotNull(message="Les dates de réservation sont obligatoires")
+     * @Assert\Type(type = "\DateTime", message="Les dates entrées ne sont pas au bon format")
+     * @Assert\Length(min = 1, minMessage = "Les dates de réservation sont obligatoires", allowEmptyString = false)
      */
     private $checkIn;
 
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"bookings_read"})
-     * @Assert\NotBlank(message="La date de départ est obligatoire")
-     * @Assert\Type(type = "\DateTime", message="La date doit être au format YYYY-MM-DD ou YYYY-MM-DD HH:MM:SS")
+     * @Assert\NotNull(message="Les dates de réservation sont obligatoires")
+     * @Assert\Type(type = "\DateTime", message="Les dates entrées ne sont pas au bon format")
+     * @Assert\Length(min = 1, minMessage = "Les dates de réservation sont obligatoires", allowEmptyString = false)
      */
     private $checkOut;
 
