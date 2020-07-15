@@ -11,6 +11,7 @@ import PrivateRoute from "./components/Routes/PrivateRoute";
 import MessagePage from "./pages/MessagePage";
 import BookingsPage from "./pages/BookingsPage";
 import BookingPage from "./pages/BookingPage";
+import BookingsWithCalendarPage from "./pages/BookingsWithCalendarPage";
 
 require("../css/app.css");
 
@@ -31,7 +32,8 @@ const App = () => {
                         <PrivateRoute path="/messages/:id" component={MessagePage} />
                         <PrivateRoute path="/messages" component={MessagesPage} />
                         <PrivateRoute path="/bookings/:id" component={BookingPage} />
-                        <PrivateRoute path="/bookings" component={BookingsPage} />
+                        <PrivateRoute path="/bookings-list" component={BookingsPage} /> 
+                        <PrivateRoute path="/bookings" component={BookingsWithCalendarPage} /> 
                         <Route path="/login" component={LoginPage} />
                     </Switch>
                 </main>

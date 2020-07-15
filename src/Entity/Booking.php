@@ -37,21 +37,21 @@ class Booking
      */
     private $email;
 
+    //@Assert\Length(min = 1, minMessage = "Les dates de réservation sont obligatoires", allowEmptyString = false)
+    //@Assert\NotNull(message="Les dates de réservation sont obligatoires")
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"bookings_read"})
-     * @Assert\NotNull(message="Les dates de réservation sont obligatoires")
-     * @Assert\Type(type = "\DateTime", message="Les dates entrées ne sont pas au bon format")
-     * @Assert\Length(min = 1, minMessage = "Les dates de réservation sont obligatoires", allowEmptyString = false)
+     *  @Assert\Type(type = "\DateTime", message="Les dates entrées ne sont pas au bon format")
+     * @Assert\NotBlank(message="Les dates de réservation sont obligatoires")
      */
     private $checkIn;
 
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"bookings_read"})
-     * @Assert\NotNull(message="Les dates de réservation sont obligatoires")
      * @Assert\Type(type = "\DateTime", message="Les dates entrées ne sont pas au bon format")
-     * @Assert\Length(min = 1, minMessage = "Les dates de réservation sont obligatoires", allowEmptyString = false)
+     * @Assert\NotBlank(message="Les dates de réservation sont obligatoires")
      */
     private $checkOut;
 

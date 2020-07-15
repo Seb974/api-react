@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const BookingsPage = (props) => {
     
-    const itemsPerPage = 2;
+    const itemsPerPage = 10;
     const [bookings, setBookings] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [search, setSearch] = useState("");
@@ -90,6 +90,9 @@ const BookingsPage = (props) => {
             {itemsPerPage < filteredBookings.length &&
                 <Pagination currentPage={currentPage} itemsPerPage={itemsPerPage} length={filteredBookings.length} onPageChanged={handlePageChange}/>
             }
+            <div className="d-flex justify-content-left mb-2">
+                <Link to="/bookings" className="btn btn-warning">Voir le calendrier</Link>
+            </div>
         </>
     );
 }

@@ -61,7 +61,9 @@ const getDatesDiff = (start_date, end_date, date_format = "YYYY-MM-DD") => {
         const nextDate = getDateAsArray(start_date).add(i, "day");
 
         // dates.push(nextDate.format(date_format));
-        dates.push(new Date(nextDate.format(date_format)));
+        let day = new Date(nextDate);
+        dates.push(new Date(day.getFullYear(), day.getMonth(), day.getDate(), 0, 0, 0));
+        // dates.push(new Date(nextDate.format(date_format)));
     }
     return dates;
 };

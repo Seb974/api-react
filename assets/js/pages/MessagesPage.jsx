@@ -4,10 +4,11 @@ import MessagesActions from '../actions/MessagesActions';
 import moment from "moment";
 import SearchBar from '../components/SearchBar';
 import { Link } from 'react-router-dom';
+import {ITEMS_PER_PAGE} from '../config/config';
 
 const MessagesPage = (props) => {
     
-    const itemsPerPage = 2;
+    const itemsPerPage = ITEMS_PER_PAGE;
     const [messages, setMessages] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [search, setSearch] = useState("");
@@ -66,7 +67,6 @@ const MessagesPage = (props) => {
                         <th>Email</th>
                         <th className="text-center">Date</th>
                         <th className="text-center">Statut</th>
-                        {/* <th>Contenu</th> */}
                         <th></th>
                     </tr>
                 </thead>
