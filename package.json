@@ -18,7 +18,7 @@
         "axios": "^0.19.2",
         "flatpickr": "^4.6.3",
         "jwt-decode": "^2.2.0",
-        "moment": "^2.27.0",
+        "moment": "^2.29.4",
         "moment-timezone": "^0.5.31",
         "react": "^16.13.1",
         "react-big-calendar": "^0.26.0",
